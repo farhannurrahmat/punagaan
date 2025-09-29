@@ -2,39 +2,69 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+/* Punagaan Tourism Village Design System - Ocean & Tropical Paradise Theme
 All colors MUST be HSL.
 */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Base colors - Clean whites and ocean-inspired */
+    --background: 210 40% 98%;
+    --foreground: 215 25% 15%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    /* Card system - Subtle ocean-inspired cards */
+    --card: 210 40% 99%;
+    --card-foreground: 215 25% 15%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    /* Popover system */
+    --popover: 210 40% 99%;
+    --popover-foreground: 215 25% 15%;
 
-    --primary: 222.2 47.4% 11.2%;
+    /* Primary - Deep ocean blue */
+    --primary: 210 85% 35%;
     --primary-foreground: 210 40% 98%;
+    --primary-light: 210 70% 45%;
+    --primary-lighter: 210 60% 85%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Secondary - Tropical turquoise */
+    --secondary: 180 75% 45%;
+    --secondary-foreground: 210 40% 98%;
+    --secondary-light: 180 60% 55%;
+    --secondary-lighter: 180 45% 88%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    /* Accent - Sandy beach tones */
+    --accent: 45 85% 70%;
+    --accent-foreground: 215 25% 15%;
+    --accent-light: 45 70% 80%;
+    --accent-lighter: 45 60% 92%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    /* Natural greens for tropical vegetation */
+    --nature: 145 75% 35%;
+    --nature-foreground: 210 40% 98%;
+    --nature-light: 145 60% 45%;
+    --nature-lighter: 145 45% 88%;
+
+    /* Muted tones */
+    --muted: 210 25% 92%;
+    --muted-foreground: 215 15% 45%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 210 20% 88%;
+    --input: 210 20% 90%;
+    --ring: 210 85% 35%;
+
+    /* Custom gradients */
+    --gradient-ocean: linear-gradient(135deg, hsl(210, 85%, 35%), hsl(180, 75%, 45%));
+    --gradient-sunset: linear-gradient(135deg, hsl(45, 85%, 70%), hsl(25, 85%, 65%));
+    --gradient-tropical: linear-gradient(135deg, hsl(145, 75%, 35%), hsl(180, 75%, 45%));
+    --gradient-hero: linear-gradient(135deg, hsl(210, 85%, 35%) 0%, hsl(180, 75%, 45%) 50%, hsl(145, 75%, 35%) 100%);
+
+    /* Shadows */
+    --shadow-ocean: 0 10px 30px -10px hsl(210, 85%, 35% / 0.3);
+    --shadow-tropical: 0 8px 25px -8px hsl(180, 75%, 45% / 0.25);
+    --shadow-gentle: 0 4px 15px -4px hsl(210, 25%, 50% / 0.15);
 
     --radius: 0.5rem;
 
@@ -56,33 +86,55 @@ All colors MUST be HSL.
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    /* Dark theme - Deep ocean night */
+    --background: 215 35% 8%;
+    --foreground: 210 40% 95%;
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    --card: 215 30% 10%;
+    --card-foreground: 210 40% 95%;
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 215 30% 10%;
+    --popover-foreground: 210 40% 95%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --primary: 180 75% 55%;
+    --primary-foreground: 215 35% 8%;
+    --primary-light: 180 65% 65%;
+    --primary-lighter: 180 45% 25%;
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 210 70% 55%;
+    --secondary-foreground: 215 35% 8%;
+    --secondary-light: 210 60% 65%;
+    --secondary-lighter: 210 45% 25%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 45 70% 65%;
+    --accent-foreground: 215 35% 8%;
+    --accent-light: 45 60% 75%;
+    --accent-lighter: 45 35% 20%;
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --nature: 145 65% 45%;
+    --nature-foreground: 215 35% 8%;
+    --nature-light: 145 55% 55%;
+    --nature-lighter: 145 35% 20%;
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    --muted: 215 20% 15%;
+    --muted-foreground: 210 15% 65%;
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
+    --destructive: 0 75% 55%;
+    --destructive-foreground: 210 40% 95%;
+
+    --border: 215 20% 18%;
+    --input: 215 20% 15%;
+    --ring: 180 75% 55%;
+
+    /* Dark theme gradients */
+    --gradient-ocean: linear-gradient(135deg, hsl(210, 70%, 25%), hsl(180, 75%, 35%));
+    --gradient-sunset: linear-gradient(135deg, hsl(45, 70%, 45%), hsl(25, 70%, 40%));
+    --gradient-tropical: linear-gradient(135deg, hsl(145, 65%, 25%), hsl(180, 75%, 35%));
+    --gradient-hero: linear-gradient(135deg, hsl(215, 35%, 8%) 0%, hsl(210, 70%, 25%) 50%, hsl(180, 75%, 35%) 100%);
+
+    --shadow-ocean: 0 10px 30px -10px hsl(180, 75%, 35% / 0.4);
+    --shadow-tropical: 0 8px 25px -8px hsl(145, 65%, 35% / 0.3);
+    --shadow-gentle: 0 4px 15px -4px hsl(210, 30%, 5% / 0.5);
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
@@ -101,5 +153,27 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
+    scroll-behavior: smooth;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer utilities {
+  .animate-fade-in-up {
+    animation: fadeInUp 1s ease-out;
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 }
