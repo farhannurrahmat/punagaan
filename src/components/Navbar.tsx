@@ -10,6 +10,7 @@ const Navbar = () => {
     { href: '#profil', label: 'Profil Desa' },
     { href: '#wisata', label: 'Wisata' },
     { href: '#galeri', label: 'Galeri' },
+    { href: '/paket-wisata', label: 'Paket Wisata' },
     { href: '#kontak', label: 'Kontak' },
   ];
 
@@ -25,18 +26,22 @@ const Navbar = () => {
           </div>
 
           {/* Desktop Menu */}
-          <div className="hidden md:block">
-            <div className="ml-10 flex items-baseline space-x-4">
-              {menuItems.map((item) => (
-                <a
-                  key={item.href}
-                  href={item.href}
-                  className="text-foreground hover:text-primary px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200"
-                >
-                  {item.label}
-                </a>
-              ))}
-            </div>
+          <div className="hidden md:flex items-center space-x-4">
+            {menuItems.map((item) => (
+              <a
+                key={item.href}
+                href={item.href}
+                className="text-foreground hover:text-primary px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200"
+              >
+                {item.label}
+              </a>
+            ))}
+            <a
+              href="/auth"
+              className="bg-gradient-ocean text-white px-4 py-2 rounded-full text-sm font-medium hover:opacity-90 transition-opacity"
+            >
+              Admin
+            </a>
           </div>
 
           {/* Mobile menu button */}
@@ -67,6 +72,13 @@ const Navbar = () => {
                 {item.label}
               </a>
             ))}
+            <a
+              href="/auth"
+              className="bg-gradient-ocean text-white block px-3 py-2 rounded-md text-base font-medium mt-2"
+              onClick={() => setIsOpen(false)}
+            >
+              Admin
+            </a>
           </div>
         </div>
       )}
