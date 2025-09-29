@@ -14,7 +14,129 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      galeri: {
+        Row: {
+          created_at: string
+          id: string
+          judul: string
+          tipe: string
+          url: string
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          judul: string
+          tipe: string
+          url: string
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          judul?: string
+          tipe?: string
+          url?: string
+        }
+        Relationships: []
+      }
+      paket_pariwisata: {
+        Row: {
+          created_at: string
+          deskripsi: string | null
+          durasi: string | null
+          fasilitas: string | null
+          gambar: string | null
+          harga: number
+          id: string
+          kontak: string | null
+          nama_paket: string
+          updated_at: string
+        }
+        Insert: {
+          created_at?: string
+          deskripsi?: string | null
+          durasi?: string | null
+          fasilitas?: string | null
+          gambar?: string | null
+          harga: number
+          id?: string
+          kontak?: string | null
+          nama_paket: string
+          updated_at?: string
+        }
+        Update: {
+          created_at?: string
+          deskripsi?: string | null
+          durasi?: string | null
+          fasilitas?: string | null
+          gambar?: string | null
+          harga?: number
+          id?: string
+          kontak?: string | null
+          nama_paket?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      profil_desa: {
+        Row: {
+          gambar: string | null
+          id: string
+          misi: string | null
+          nama_desa: string
+          sejarah: string | null
+          updated_at: string
+          visi: string | null
+        }
+        Insert: {
+          gambar?: string | null
+          id?: string
+          misi?: string | null
+          nama_desa: string
+          sejarah?: string | null
+          updated_at?: string
+          visi?: string | null
+        }
+        Update: {
+          gambar?: string | null
+          id?: string
+          misi?: string | null
+          nama_desa?: string
+          sejarah?: string | null
+          updated_at?: string
+          visi?: string | null
+        }
+        Relationships: []
+      }
+      wisata: {
+        Row: {
+          created_at: string
+          deskripsi: string | null
+          gambar: string | null
+          id: string
+          lokasi: string | null
+          nama_wisata: string
+          updated_at: string
+        }
+        Insert: {
+          created_at?: string
+          deskripsi?: string | null
+          gambar?: string | null
+          id?: string
+          lokasi?: string | null
+          nama_wisata: string
+          updated_at?: string
+        }
+        Update: {
+          created_at?: string
+          deskripsi?: string | null
+          gambar?: string | null
+          id?: string
+          lokasi?: string | null
+          nama_wisata?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
