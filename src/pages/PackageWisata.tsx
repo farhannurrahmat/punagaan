@@ -135,10 +135,7 @@ const PackageWisata = () => {
                       </div>
                       <Button 
                         className="bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700"
-                        onClick={() => {
-                          const message = encodeURIComponent(`Halo saya ingin pesan ${pkg.nama_paket}`);
-                          window.open(`https://wa.me/${pkg.kontak}?text=${message}`, '_blank');
-                        }}
+                        onClick={() => window.open(`https://wa.me/${pkg.kontak.replace(/[^0-9]/g, '')}?text=Halo, saya tertarik dengan paket wisata ${pkg.nama_paket}`, '_blank')}
                       >
                         Pesan Sekarang
                       </Button>
