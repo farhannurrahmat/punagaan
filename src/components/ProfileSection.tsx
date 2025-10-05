@@ -1,14 +1,30 @@
+import { useState, useEffect } from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { MapPin, Users, Waves } from 'lucide-react';
+import { supabase } from '@/integrations/supabase/client';
 import villageImage from '@/assets/village-view.jpg';
 
 const ProfileSection = () => {
+  const [profileData, setProfileData] = useState<any>(null);
+
+  useEffect(() => {
+    fetchProfile();
+  }, []);
+
+  const fetchProfile = async () => {
+    const { data } = await supabase
+      .from('profil_desa')
+      .select('*')
+      .single();
+    
+    if (data) setProfileData(data);
+  };
   return (
     <section id="profil" className="py-20 bg-muted/30">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-            Profil Desa Punagaan
+            Profil {profileData?.nama_desa || 'Desa Punagaan'}
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             Mengenal lebih dekat desa wisata yang memadukan keindahan alam dengan kearifan lokal
@@ -19,8 +35,8 @@ const ProfileSection = () => {
           {/* Image */}
           <div className="relative">
             <img
-              src={villageImage}
-              alt="Desa Punagaan"
+              src={profileData?.gambar || villageImage}
+              alt={profileData?.nama_desa || 'Desa Punagaan'}
               className="w-full h-96 object-cover rounded-2xl shadow-gentle"
             />
             <div className="absolute inset-0 bg-gradient-tropical opacity-20 rounded-2xl" />
@@ -30,13 +46,10 @@ const ProfileSection = () => {
           <div className="space-y-6">
             <div>
               <h3 className="text-2xl font-semibold text-foreground mb-4">
-                Tentang Punagaan
+                Tentang {profileData?.nama_desa || 'Punagaan'}
               </h3>
               <p className="text-muted-foreground leading-relaxed mb-6">
-                Desa Punagaan terletak di Kepulauan Selayar, Sulawesi Selatan, yang dikenal 
-                sebagai salah satu destinasi wisata bahari terbaik di Indonesia. Dengan 
-                kekayaan alam bawah laut yang menakjubkan dan budaya maritim yang kental, 
-                Punagaan menjadi surga tersembunyi bagi para wisatawan.
+                {profileData?.sejarah || 'Desa Punagaan terletak di Kepulauan Selayar, Sulawesi Selatan, yang dikenal sebagai salah satu destinasi wisata bahari terbaik di Indonesia.'}
               </p>
             </div>
 
@@ -72,16 +85,14 @@ const ProfileSection = () => {
               <div>
                 <h4 className="font-semibold text-primary mb-2">Visi</h4>
                 <p className="text-sm text-muted-foreground">
-                  Menjadi desa wisata bahari berkelanjutan yang melestarikan alam dan budaya lokal
+                  {profileData?.visi || 'Menjadi desa wisata bahari berkelanjutan yang melestarikan alam dan budaya lokal'}
                 </p>
               </div>
               <div>
                 <h4 className="font-semibold text-secondary mb-2">Misi</h4>
-                <ul className="text-sm text-muted-foreground space-y-1">
-                  <li>• Mengembangkan pariwisata ramah lingkungan</li>
-                  <li>• Memberdayakan masyarakat lokal</li>
-                  <li>• Melestarikan ekosistem laut dan budaya</li>
-                </ul>
+                <p className="text-sm text-muted-foreground whitespace-pre-line">
+                  {profileData?.misi || '• Mengembangkan pariwisata ramah lingkungan\n• Memberdayakan masyarakat lokal\n• Melestarikan ekosistem laut dan budaya'}
+                </p>
               </div>
             </div>
           </div>

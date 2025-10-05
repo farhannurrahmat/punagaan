@@ -1,8 +1,24 @@
+import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { ArrowDown } from 'lucide-react';
+import { supabase } from '@/integrations/supabase/client';
 import heroImage from '@/assets/hero-beach.jpg';
 
 const Hero = () => {
+  const [profileData, setProfileData] = useState<any>(null);
+
+  useEffect(() => {
+    fetchProfile();
+  }, []);
+
+  const fetchProfile = async () => {
+    const { data } = await supabase
+      .from('profil_desa')
+      .select('*')
+      .single();
+    
+    if (data) setProfileData(data);
+  };
   return (
     <section id="beranda" className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image */}
@@ -19,7 +35,7 @@ const Hero = () => {
           <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 animate-fade-in-up">
             Selamat Datang di
             <span className="block text-accent mt-2">
-              Desa Wisata Punagaan
+              {profileData?.nama_desa || 'Desa Wisata Punagaan'}
             </span>
           </h1>
           
