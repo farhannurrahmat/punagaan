@@ -9,9 +9,9 @@ const Footer = () => {
           <div className="col-span-1 md:col-span-2">
             <h3 className="text-2xl font-bold mb-4">Desa Wisata Punagaan</h3>
             <p className="text-primary-foreground/80 mb-6 leading-relaxed">
-              Menjelajahi keindahan alam Kepulauan Selayar dengan pengalaman wisata 
-              yang tak terlupakan. Nikmati pesona pantai, budaya lokal, dan kehangatan 
-              masyarakat Punagaan.
+              Nikmati keindahan alam, budaya ramah, dan pesona laut biru di Selayar. 
+              Desa Punagaan menawarkan pengalaman wisata bahari, budaya, dan kuliner lokal 
+              yang tak terlupakan.
             </p>
             
             {/* Social Media */}
@@ -84,10 +84,13 @@ const Footer = () => {
                 Kepulauan Selayar, Sulawesi Selatan
               </p>
               <p className="text-sm">
-                Telepon: +62 411 123 4567
+                WhatsApp: <a href="https://wa.me/6281234567890" className="hover:text-primary-foreground transition-colors">+62 812 3456 7890</a>
               </p>
               <p className="text-sm">
-                Email: info@desawisatapunagaan.id
+                Email: <a href="mailto:info@punagaanwisata.id" className="hover:text-primary-foreground transition-colors">info@punagaanwisata.id</a>
+              </p>
+              <p className="text-sm">
+                Instagram: <a href="https://instagram.com/punagaan_wisata" target="_blank" rel="noopener noreferrer" className="hover:text-primary-foreground transition-colors">@punagaan_wisata</a>
               </p>
             </div>
           </div>
@@ -95,9 +98,14 @@ const Footer = () => {
 
         {/* Bottom Bar */}
         <div className="border-t border-primary-foreground/20 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
-          <p className="text-primary-foreground/80 text-sm">
-            © 2024 Desa Wisata Punagaan. Seluruh hak cipta dilindungi.
-          </p>
+          <div className="text-center md:text-left">
+            <p className="text-primary-foreground/80 text-sm">
+              © 2025 Desa Wisata Punagaan
+            </p>
+            <p className="text-primary-foreground/60 text-xs mt-1">
+              Dikelola oleh Pemerintah Desa & Pokdarwis Punagaan
+            </p>
+          </div>
           <div className="flex space-x-6 mt-4 md:mt-0">
             <a href="#" className="text-primary-foreground/80 hover:text-primary-foreground text-sm transition-colors duration-200">
               Kebijakan Privasi

@@ -35,25 +35,33 @@ const Hero = () => {
           <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 animate-fade-in-up">
             Selamat Datang di
             <span className="block text-accent mt-2">
-              {profileData?.nama_desa || 'Desa Wisata Punagaan'}
+              Desa Wisata Punagaan
             </span>
           </h1>
           
           <p className="text-xl md:text-2xl text-white/90 mb-8 max-w-2xl mx-auto leading-relaxed">
-            Jelajahi keindahan alam Kepulauan Selayar yang memukau dengan pantai 
-            berpasir putih, terumbu karang yang indah, dan budaya lokal yang kaya.
+            Nikmati keindahan alam, budaya ramah, dan pesona laut biru di Selayar.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <Button 
               size="lg"
+              onClick={() => {
+                const packageSection = document.getElementById('paket-wisata');
+                if (packageSection) {
+                  packageSection.scrollIntoView({ behavior: 'smooth' });
+                } else {
+                  window.location.href = '/paket-wisata';
+                }
+              }}
               className="bg-secondary hover:bg-secondary-light text-secondary-foreground font-semibold px-8 py-4 rounded-full shadow-tropical transition-all duration-300"
             >
-              Jelajahi Wisata
+              Jelajahi Sekarang
             </Button>
             <Button 
               variant="outline" 
               size="lg"
+              onClick={() => document.getElementById('profil')?.scrollIntoView({ behavior: 'smooth' })}
               className="border-white/30 text-white hover:bg-white/10 px-8 py-4 rounded-full transition-all duration-300"
             >
               Pelajari Lebih Lanjut

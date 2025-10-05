@@ -72,9 +72,10 @@ const ContactSection = () => {
                     <Phone className="w-5 h-5 text-secondary" />
                   </div>
                   <div>
-                    <h4 className="font-semibold text-foreground mb-1">Telepon</h4>
-                    <p className="text-muted-foreground text-sm">+62 411 123 4567</p>
-                    <p className="text-muted-foreground text-sm">+62 812 3456 7890 (WhatsApp)</p>
+                    <h4 className="font-semibold text-foreground mb-1">WhatsApp</h4>
+                    <a href="https://wa.me/6281234567890" target="_blank" rel="noopener noreferrer" className="text-muted-foreground text-sm hover:text-primary transition-colors">
+                      +62 812 3456 7890
+                    </a>
                   </div>
                 </div>
 
@@ -84,21 +85,24 @@ const ContactSection = () => {
                   </div>
                   <div>
                     <h4 className="font-semibold text-foreground mb-1">Email</h4>
-                    <p className="text-muted-foreground text-sm">info@desawisatapunagaan.id</p>
-                    <p className="text-muted-foreground text-sm">wisata@punagaan.selayar.id</p>
+                    <a href="mailto:info@punagaanwisata.id" className="text-muted-foreground text-sm hover:text-primary transition-colors">
+                      info@punagaanwisata.id
+                    </a>
                   </div>
                 </div>
 
                 <div className="flex items-start gap-4">
                   <div className="p-3 bg-accent-lighter rounded-lg">
-                    <Clock className="w-5 h-5 text-accent-foreground" />
+                    <Mail className="w-5 h-5 text-accent-foreground" />
                   </div>
                   <div>
-                    <h4 className="font-semibold text-foreground mb-1">Jam Operasional</h4>
-                    <p className="text-muted-foreground text-sm">Senin - Minggu: 08:00 - 17:00 WITA</p>
-                    <p className="text-muted-foreground text-sm">Konsultasi: 24/7 (WhatsApp)</p>
+                    <h4 className="font-semibold text-foreground mb-1">Instagram</h4>
+                    <a href="https://instagram.com/punagaan_wisata" target="_blank" rel="noopener noreferrer" className="text-muted-foreground text-sm hover:text-primary transition-colors">
+                      @punagaan_wisata
+                    </a>
                   </div>
                 </div>
+
               </CardContent>
             </Card>
 

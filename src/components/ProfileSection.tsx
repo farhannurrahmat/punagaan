@@ -46,10 +46,10 @@ const ProfileSection = () => {
           <div className="space-y-6">
             <div>
               <h3 className="text-2xl font-semibold text-foreground mb-4">
-                Tentang {profileData?.nama_desa || 'Punagaan'}
+                Tentang Punagaan
               </h3>
               <p className="text-muted-foreground leading-relaxed mb-6">
-                {profileData?.sejarah || 'Desa Punagaan terletak di Kepulauan Selayar, Sulawesi Selatan, yang dikenal sebagai salah satu destinasi wisata bahari terbaik di Indonesia.'}
+                Desa Punagaan adalah salah satu destinasi wisata di Kabupaten Kepulauan Selayar, Sulawesi Selatan. Dikenal dengan pantai berpasir putih, laut biru jernih, serta kehidupan masyarakat desa yang ramah. Potensi utama meliputi wisata bahari, budaya, dan kuliner lokal.
               </p>
             </div>
 
@@ -85,13 +85,16 @@ const ProfileSection = () => {
               <div>
                 <h4 className="font-semibold text-primary mb-2">Visi</h4>
                 <p className="text-sm text-muted-foreground">
-                  {profileData?.visi || 'Menjadi desa wisata bahari berkelanjutan yang melestarikan alam dan budaya lokal'}
+                  Menjadikan Punagaan sebagai desa wisata unggulan yang alami, ramah, dan berkelanjutan.
                 </p>
               </div>
               <div>
                 <h4 className="font-semibold text-secondary mb-2">Misi</h4>
                 <p className="text-sm text-muted-foreground whitespace-pre-line">
-                  {profileData?.misi || '• Mengembangkan pariwisata ramah lingkungan\n• Memberdayakan masyarakat lokal\n• Melestarikan ekosistem laut dan budaya'}
+                  • Mengembangkan pariwisata ramah lingkungan
+• Memberdayakan masyarakat lokal
+• Melestarikan ekosistem laut dan budaya
+• Meningkatkan kualitas layanan wisata
                 </p>
               </div>
             </div>
