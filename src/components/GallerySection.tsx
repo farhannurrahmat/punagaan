@@ -205,18 +205,18 @@ const GallerySection = () => {
                   
                   {/* Overlay Content */}
                   <div className="absolute inset-0 flex flex-col justify-end p-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <div className="bg-black/50 backdrop-blur-sm rounded-lg p-2">
+                    {/* <div className="bg-black/50 backdrop-blur-sm rounded-lg p-2">
                       <h3 className="font-semibold text-base mb-1 line-clamp-1">{item.judul}</h3>
                       <p className="text-xs text-white/80 capitalize">{item.tipe}</p>
-                    </div>
+                    </div> */}
                   </div>
 
                   {/* Category Badge */}
-                  <div className="absolute top-3 right-3">
+                  {/* <div className="absolute top-3 right-3">
                     <span className="bg-accent/90 text-accent-foreground px-2 py-0.5 rounded-full text-xs font-medium capitalize">
                       {item.tipe}
                     </span>
-                  </div>
+                  </div> */}
                 </div>
               </Card>
             ))

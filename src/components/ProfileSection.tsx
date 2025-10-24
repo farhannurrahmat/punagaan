@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { MapPin, Users, Waves } from 'lucide-react';
 import { supabase } from '@/integrations/supabase/client';
-import villageImage from '@/assets/village-view.jpg';
+import villageImage from '@/assets/about.jpg';
 
 const ProfileSection = () => {
   const [profileData, setProfileData] = useState<any>(null);

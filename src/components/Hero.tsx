@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { ArrowDown } from 'lucide-react';
 import { supabase } from '@/integrations/supabase/client';
-import heroImage from '@/assets/hero-beach.jpg';
+import heroImage from '@/assets/hero.jpg';
 
 const Hero = () => {
   const [profileData, setProfileData] = useState<any>(null);

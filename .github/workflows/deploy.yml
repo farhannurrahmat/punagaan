@@ -1,0 +1,52 @@
+# .github/workflows/deploy.yml
+
+name: Deploy Vite Project to GitHub Pages
+
+on:
+  # Jalankan workflow ini setiap kali ada push ke branch 'main'
+  push:
+    branches: [ "main" ]
+
+# Izinkan workflow ini untuk menulis ke Gist dan Pages
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v1 # Menggunakan Bun (karena ada bun.lock)
+      
+      - name: Install dependencies
+        run: bun install
+      
+      - name: Build project
+        # Menjalankan 'bun run build' dan menaruh hasilnya di folder 'dist'
+        run: bun run build 
+      
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          # Unggah folder 'dist'
+          path: dist
+
+  deploy:
+    runs-on: ubuntu-latest
+    # Jalankan job 'deploy' HANYA JIKA job 'build' berhasil
+    needs: build
+    
+    # Atur lingkungan deploy
+    environment:
+      name: github-pages
+      url: $
+
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
