@@ -10,7 +10,7 @@ const Navbar = () => {
     { href: '#profil', label: 'Profil Desa' },
     { href: '#wisata', label: 'Wisata' },
     { href: '#galeri', label: 'Galeri' },
-    { href: '/paket-wisata', label: 'Paket Wisata' },
+    { href: '#paket-wisata', label: 'Paket Wisata' },
     { href: '#kontak', label: 'Kontak' },
   ];
 

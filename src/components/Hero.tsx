@@ -44,31 +44,33 @@ const Hero = () => {
             berpasir putih, terumbu karang yang indah, dan budaya lokal yang kaya.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+          <div className="flex flex-col sm:flex-row justify-center items-center">
+            <a href="#wisata">
             <Button 
               size="lg"
               className="bg-secondary hover:bg-secondary-light text-secondary-foreground font-semibold px-8 py-4 rounded-full shadow-tropical transition-all duration-300"
             >
               Jelajahi Wisata
             </Button>
-            <Button 
+            </a>
+            {/* <Button 
               variant="outline" 
               size="lg"
               className="border-white/30 text-white hover:bg-white/10 px-8 py-4 rounded-full transition-all duration-300"
             >
               Pelajari Lebih Lanjut
-            </Button>
+            </Button> */}
           </div>
         </div>
 
         {/* Scroll Indicator */}
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+        {/* <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
           <ArrowDown className="text-white/70 w-6 h-6" />
-        </div>
+        </div> */}
       </div>
 
       {/* Decorative Elements */}
-      <div className="absolute bottom-0 left-0 right-0">
+      {/* <div className="absolute bottom-0 left-0 right-0">
         <svg
           className="w-full h-24 fill-background"
           viewBox="0 0 1200 120"
@@ -76,7 +78,7 @@ const Hero = () => {
         >
           <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" />
         </svg>
-      </div>
+      </div> */}
     </section>
   );
 };
