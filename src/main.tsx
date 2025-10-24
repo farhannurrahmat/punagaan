@@ -8,16 +8,17 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App.tsx'
 import './index.css'
-import { BrowserRouter } from 'react-router-dom'
+// ▼▼▼ UBAH IMPOR INI ▼▼▼
+import { HashRouter } from 'react-router-dom'
 
-// Set basename jadi '/' jika di mode development (lokal)
-// Set jadi '/punagaan/' jika di mode produksi (build)
-const basename = import.meta.env.DEV ? '/' : '/punagaan/'; // <-- INI KUNCINYA
+// Hapus 'basename'
+// const basename = import.meta.env.DEV ? '/' : '/punagaan/';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <BrowserRouter basename={basename}>
+    {/* ▼▼▼ UBAH TAG INI (dan hapus prop 'basename') ▼▼▼ */}
+    <HashRouter>
       <App />
-    </BrowserRouter>
+    </HashRouter>
   </React.StrictMode>,
 )
