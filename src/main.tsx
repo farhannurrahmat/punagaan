@@ -8,17 +8,13 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App.tsx'
 import './index.css'
-// ▼▼▼ UBAH IMPOR INI ▼▼▼
-import { HashRouter } from 'react-router-dom'
 
-// Hapus 'basename'
-// const basename = import.meta.env.DEV ? '/' : '/punagaan/';
+import { BrowserRouter } from 'react-router-dom';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    {/* ▼▼▼ UBAH TAG INI (dan hapus prop 'basename') ▼▼▼ */}
-    <HashRouter>
+    <BrowserRouter>
       <App />
-    </HashRouter>
+    </BrowserRouter>
   </React.StrictMode>,
 )

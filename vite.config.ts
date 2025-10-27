@@ -15,8 +15,4 @@ export default defineConfig(({ mode }) => ({
       "@": path.resolve(__dirname, "./src"),
     },
   },
-  
-  // ▼▼▼ KEMBALIKAN KE KODE INI ▼▼▼
-  // Ini akan berfungsi untuk 'HashRouter' di lokal DAN produksi
-  base: mode === "production" ? '/punagaan/' : '/',
 }));

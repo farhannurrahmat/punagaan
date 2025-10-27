@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -36,12 +37,12 @@ const Navbar = () => {
                 {item.label}
               </a>
             ))}
-            <a
-              href="/auth"
+            <Link
+              to="/auth"
               className="bg-gradient-ocean text-white px-4 py-2 rounded-full text-sm font-medium hover:opacity-90 transition-opacity"
             >
               Admin
-            </a>
+            </Link>
           </div>
 
           {/* Mobile menu button */}
@@ -72,13 +73,13 @@ const Navbar = () => {
                 {item.label}
               </a>
             ))}
-            <a
-              href="/auth"
+            <Link
+              to="/auth"
               className="bg-gradient-ocean text-white block px-3 py-2 rounded-md text-base font-medium mt-2"
               onClick={() => setIsOpen(false)}
             >
               Admin
-            </a>
+            </Link>
           </div>
         </div>
       )}
